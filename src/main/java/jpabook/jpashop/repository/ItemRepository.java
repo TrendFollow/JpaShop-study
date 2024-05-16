@@ -15,10 +15,10 @@ public class ItemRepository {
 
 
     public void save(Item item){
-        if(item.getId() == null || item.getId() == 0){
+        if(item.getId() == null){
             em.persist(item);
         }else{
-            em.merge(item); // update 비슷한거다.
+            em.merge(item); // update 비슷한거다. 모든 속성이 전부 변경된다.
         }
     }
 
